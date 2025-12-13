@@ -1,0 +1,79 @@
+# Top-level EditorConfig
+root = true
+
+# -------------------------------------------------
+# Global defaults
+# -------------------------------------------------
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+tab_width = 4
+
+# -------------------------------------------------
+# PHP files (PSR-12 compliant)
+# -------------------------------------------------
+[*.php]
+indent_size = 4
+max_line_length = 120
+
+# PHPStorm-specific (safe, non-breaking)
+ij_php_align_key_value_pairs = false
+ij_php_call_parameters_wrap = on_every_item
+ij_php_method_parameters_wrap = on_every_item
+ij_php_array_initializer_wrap = on_every_item
+ij_php_binary_operation_wrap = on_every_item
+ij_php_assignment_wrap = off
+
+ij_php_space_before_short_closure_left_parenthesis = false
+ij_php_space_after_comma = true
+ij_php_space_before_comma = false
+ij_php_spaces_around_unary_operator = false
+ij_php_spaces_around_bitwise_operators = true
+ij_php_spaces_around_arrow = false
+
+
+ij_php_blank_lines_after_opening_tag = 0
+ij_php_blank_lines_before_return_statement = 1
+
+# Keep PHPUnit assertions readable
+ij_php_keep_simple_methods_in_one_line = false
+
+# -------------------------------------------------
+# PHPUnit test files (slightly more relaxed)
+# -------------------------------------------------
+[*Test.php]
+max_line_length = 160
+ij_php_call_parameters_wrap = off
+ij_php_method_parameters_wrap = off
+
+# -------------------------------------------------
+# YAML (CI, GitHub Actions, Symfony, Drupal)
+# -------------------------------------------------
+[*.yml]
+indent_size = 2
+
+[*.yaml]
+indent_size = 2
+
+# -------------------------------------------------
+# JSON (composer.json, package.json)
+# -------------------------------------------------
+[*.json]
+indent_size = 2
+
+# -------------------------------------------------
+# Markdown
+# -------------------------------------------------
+[*.md]
+trim_trailing_whitespace = false
+max_line_length = off
+
+# -------------------------------------------------
+# XML (phpunit.xml, services.xml)
+# -------------------------------------------------
+[*.xml]
+indent_size = 2

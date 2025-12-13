@@ -9,9 +9,13 @@ class Asset extends BaseModel
 {
     // Support both naming variants seen in examples/schemas
     protected ?string $name = null;        // sometimes used in examples
+
     protected ?string $title = null;       // used in schemas
+
     protected ?string $description = null;
+
     protected ?string $landingPage = null; // uri in BindingRequirement example
+
     protected ?string $url = null;         // uri in Asset schema
 
     /**
@@ -37,6 +41,7 @@ class Asset extends BaseModel
         } elseif ($this->url !== null) {
             $out['url'] = $this->url;
         }
+
         return $out;
     }
 }

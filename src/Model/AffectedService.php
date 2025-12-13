@@ -8,6 +8,7 @@ namespace AssessmentClient\Model;
 class AffectedService extends BaseModel
 {
     protected ?string $name = null;
+
     protected ?string $thematicArea = null;
 
     /**
@@ -25,6 +26,7 @@ class AffectedService extends BaseModel
         if ($this->thematicArea !== null) {
             $out['thematic_area'] = $this->thematicArea;
         }
+
         return $out;
     }
 }

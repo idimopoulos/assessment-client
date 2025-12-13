@@ -8,14 +8,19 @@ namespace AssessmentClient\Model;
 class BindingRequirement extends BaseModel
 {
     protected ?string $description = null;
+
     /** @var string[] */
     protected array $documents = [];
+
     /** @var Expression[] */
     protected array $expression = [];
+
     /** @var AffectedService[] */
     protected array $affects = [];
+
     /** @var Participant[] */
     protected array $hasParticipation = [];
+
     /** @var array<int, Asset|string> list of Asset objects and/or UUID strings */
     protected array $asset = [];
 
@@ -31,6 +36,7 @@ class BindingRequirement extends BaseModel
     public function addDocument(string $url): self
     {
         $this->documents[] = $url;
+
         return $this;
     }
 
@@ -44,6 +50,7 @@ class BindingRequirement extends BaseModel
     {
         $expr = new Expression();
         $this->expression[] = $expr;
+
         return $expr;
     }
 
@@ -57,6 +64,7 @@ class BindingRequirement extends BaseModel
     {
         $svc = new AffectedService();
         $this->affects[] = $svc;
+
         return $svc;
     }
 
@@ -70,6 +78,7 @@ class BindingRequirement extends BaseModel
     {
         $p = new Participant();
         $this->hasParticipation[] = $p;
+
         return $p;
     }
 
@@ -83,6 +92,7 @@ class BindingRequirement extends BaseModel
     {
         $a = new Asset();
         $this->asset[] = $a;
+
         return $a;
     }
 
@@ -98,6 +108,7 @@ class BindingRequirement extends BaseModel
     public function addAssetId(string $uuid): self
     {
         $this->asset[] = $uuid;
+
         return $this;
     }
 
@@ -142,9 +153,11 @@ class BindingRequirement extends BaseModel
                 if (is_string($a)) {
                     return $a;
                 }
+
                 return $a->toArray();
             }, $this->asset);
         }
+
         return $out;
     }
 }

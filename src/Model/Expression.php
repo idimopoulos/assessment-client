@@ -8,13 +8,16 @@ namespace AssessmentClient\Model;
 class Expression extends BaseModel
 {
     protected ?string $name = null;
+
     protected ?string $description = null;
+
     protected ?string $documentedIn = null; // uri
 
     /**
      * Build payload for Expression.
      *
-     * @return array<string, string> Associative array representation ready for JSON encoding.
+     * @return array<string, string> Associative array representation ready for
+     *         JSON encoding.
      */
     public function toArray(): array
     {
@@ -28,6 +31,7 @@ class Expression extends BaseModel
         if ($this->documentedIn !== null) {
             $out['documented_in'] = $this->documentedIn;
         }
+
         return $out;
     }
 }

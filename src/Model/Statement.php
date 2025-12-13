@@ -8,6 +8,7 @@ namespace AssessmentClient\Model;
 class Statement extends BaseModel
 {
     protected ?string $interpretation = null; // negative|neutral|positive
+
     protected ?string $judgement = null;      // string
 
     /**
@@ -27,6 +28,7 @@ class Statement extends BaseModel
         if ($this->judgement !== null) {
             $out['judgement'] = $this->judgement;
         }
+
         return $out;
     }
 }

@@ -8,6 +8,7 @@ namespace AssessmentClient\Model;
 class Participant extends BaseModel
 {
     protected ?string $participantType = null;
+
     protected ?string $country = null;
 
     /**
@@ -27,6 +28,7 @@ class Participant extends BaseModel
         if ($this->participantType !== null) {
             $out['participant_type'] = $this->participantType;
         }
+
         return $out;
     }
 }

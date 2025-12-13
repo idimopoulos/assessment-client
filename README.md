@@ -50,6 +50,26 @@ Configuration files:
 - `phpcs.xml` — ruleset (PSR-12, excludes `vendor/` and `openapi/`).
 - `phpstan.neon.dist` — analysis settings (paths: `src/`).
 
+## IDE configuration
+PhpStorm and other JetBrains IDEs will pick up the project-wide `.editorconfig` located at the repository root.
+
+- Indentation: 4 spaces.
+- Line endings: LF with final newline.
+- Braces: classes, methods, and functions place opening braces on the next line (control structures keep PSR-12 defaults).
+
+If `.idea/` project files exist locally, they remain untracked (see `.gitignore`).
+
+## Testing
+Basic PHPUnit tests are configured.
+
+- Run the test suite:
+
+```
+composer test
+```
+
+The default configuration file is `phpunit.xml.dist`. Tests live under the `tests/` directory.
+
 ## Usage
 Autoload models via Composer and build the assessment payload. See inline examples in the codebase.
 

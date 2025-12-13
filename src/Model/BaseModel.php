@@ -21,6 +21,7 @@ abstract class BaseModel
     public function setId(string $id): self
     {
         $this->id = $id;
+
         return $this;
     }
 
@@ -53,6 +54,7 @@ abstract class BaseModel
         if (property_exists($this, $prop)) {
             $this->$prop = $value;
         }
+
         return $this;
     }
 
@@ -73,8 +75,10 @@ abstract class BaseModel
             foreach ($segments as $seg) {
                 $camel .= ucfirst($seg);
             }
+
             return $camel;
         }
+
         return $key;
     }
 

@@ -8,15 +8,19 @@ namespace AssessmentClient\Model;
 class Assessment extends BaseModel
 {
     protected ?string $name = null;
+
     /**
      * Provider can be Organisation object or UUID string reference
+     *
      * @var Organisation|string|null
      */
     protected $provider = null;
+
     /** @var BindingRequirement[] */
     protected array $bindingRequirement = [];
 
     // results_in statements
+
     /** @var array{legal: ?Statement, organisational: ?Statement, semantic: ?Statement, technical: ?Statement} */
     protected array $resultsIn = [
         'legal' => null,
@@ -26,8 +30,10 @@ class Assessment extends BaseModel
     ];
 
     protected ?string $remainingBarriers = null;
+
     /** @var string[] */
     protected array $documents = [];
+
     protected ?string $otherComment = null;
 
     /**
@@ -41,6 +47,7 @@ class Assessment extends BaseModel
         // Replace existing reference if any
         $org = new Organisation();
         $this->provider = $org;
+
         return $org;
     }
 
@@ -56,6 +63,7 @@ class Assessment extends BaseModel
     public function setProviderId(string $uuid): self
     {
         $this->provider = $uuid;
+
         return $this;
     }
 
@@ -71,6 +79,7 @@ class Assessment extends BaseModel
     public function addDocument(string $url): self
     {
         $this->documents[] = $url;
+
         return $this;
     }
 
@@ -84,6 +93,7 @@ class Assessment extends BaseModel
     {
         $br = new BindingRequirement();
         $this->bindingRequirement[] = $br;
+
         return $br;
     }
 
@@ -105,6 +115,7 @@ class Assessment extends BaseModel
         if ($this->resultsIn[$dim] === null) {
             $this->resultsIn[$dim] = new Statement();
         }
+
         return $this->resultsIn[$dim];
     }
 
@@ -114,11 +125,10 @@ class Assessment extends BaseModel
      * @return array{
      *     name?: string,
      *     provider?: string|array<string, string>,
-     *     binding_requirement?: array<string, mixed>|list<array<string, mixed>>,
-     *     results_in?: array<string, array<string, string>>,
-     *     remaining_barriers?: string,
-     *     documents?: list<string>,
-     *     other_comment?: string
+     *     binding_requirement?: array<string, mixed>|list<array<string,
+     *         mixed>>, results_in?: array<string, array<string, string>>,
+     *         remaining_barriers?: string, documents?: list<string>,
+     *         other_comment?: string
      * } Associative array representation ready for JSON encoding.
      */
     public function getAsArray(): array

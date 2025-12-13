@@ -8,7 +8,9 @@ namespace AssessmentClient\Model;
 class Organisation extends BaseModel
 {
     protected ?string $name = null;
+
     protected ?string $organisationType = null;
+
     protected ?string $country = null; // ISO-3166 alpha-2 or null
 
     /**
@@ -29,6 +31,7 @@ class Organisation extends BaseModel
         if ($this->country !== null) {
             $out['country'] = $this->country;
         }
+
         return $out;
     }
 }
