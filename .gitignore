@@ -5,6 +5,7 @@
 
 # PHP tooling caches
 .phpunit.result.cache
+.phpunit.cache/
 .php-cs-fixer.cache
 .phpcs-cache
 .phpstan
@@ -41,3 +42,6 @@ tmp/
 
 # Node (if any)
 node_modules/
+
+# phpunit
+phpunit.xml
