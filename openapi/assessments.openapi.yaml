@@ -5,15 +5,11 @@ info:
   description: |
     API for submitting Assessment reports and related entities.
 servers:
-  - url: /oauth
-    description: OAuth2 endpoint
   - url: /api/assessments/v1
     description: Assessments API endpoint
 security:
   - oauth2: [ ]
 paths:
-  /token:
-    $ref: "../../joinup_api/openapi/oauth2.openapi.yaml#/paths/~1token"
   /assessment:
     servers:
       - url: /api/assessments/v1
@@ -102,8 +98,8 @@ paths:
                       interpretation: positive
                       judgement: Compliant with conditions
                     technical:
-                      judgement: neutral
-                      interpretation: Requires follow-up
+                      interpretation: neutral
+                      judgement: Requires follow-up
                   remaining_barriers: The city has not yet implemented the new regulations.
                   documents:
                     - https://files.example.com/documents/req-1.pdf
@@ -224,15 +220,6 @@ paths:
                       "organisation_type": "national_public_sector_body"
                       country: null
 components:
-
-  securitySchemes:
-
-    oauth2:
-      type: oauth2
-      flows:
-        clientCredentials:
-          tokenUrl: /oauth/token
-          scopes: { }
 
   schemas:
 

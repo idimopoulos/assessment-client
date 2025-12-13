@@ -3,10 +3,15 @@
     "description": "A library that helps with constructing data to be submitted to the assessment API.",
     "type": "library",
     "autoload": {
-        "psr-4": {
-            "AssessmentClient\\": "src/"
-        }
-    },
+    "psr-4": {
+      "AssessmentClient\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "AssessmentClient\\Tests\\": "tests/"
+    }
+  },
     "authors": [
         {
             "name": "Ilias Dimopoulos",
@@ -25,13 +30,13 @@
         "phpunit/phpunit": "^11.0"
     },
     "scripts": {
-        "cs": "phpcs -p src",
-        "cbf": "phpcbf -p src",
-        "stan": "phpstan analyse -c phpstan.neon.dist",
-        "qa": [
-            "@cs",
-            "@stan"
-        ],
-        "test": "phpunit"
-    }
+    "cs": "phpcs -p src",
+    "cbf": "phpcbf -p src",
+    "stan": "phpstan analyse -c phpstan.neon.dist",
+    "qa": [
+      "@cs",
+      "@stan"
+    ],
+    "test": "phpunit"
+  }
 }

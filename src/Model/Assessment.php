@@ -125,10 +125,11 @@ class Assessment extends BaseModel
      * @return array{
      *     name?: string,
      *     provider?: string|array<string, string>,
-     *     binding_requirement?: array<string, mixed>|list<array<string,
-     *         mixed>>, results_in?: array<string, array<string, string>>,
-     *         remaining_barriers?: string, documents?: list<string>,
-     *         other_comment?: string
+     *     binding_requirement?: list<array<string, mixed>>,
+     *     results_in?: array<string, array<string, string>>,
+     *     remaining_barriers?: string,
+     *     documents?: list<string>,
+     *     other_comment?: string
      * } Associative array representation ready for JSON encoding.
      */
     public function getAsArray(): array
@@ -147,16 +148,11 @@ class Assessment extends BaseModel
             }
         }
 
-        // binding_requirement: output single object if only one, else array
+        // binding_requirement: always output as list per schema.
         if (!empty($this->bindingRequirement)) {
-            $mapped = array_map(function ($br) {
+            $out['binding_requirement'] = array_map(function ($br) {
                 return $br->toArray();
             }, $this->bindingRequirement);
-            if (count($mapped) === 1) {
-                $out['binding_requirement'] = $mapped[0];
-            } else {
-                $out['binding_requirement'] = $mapped;
-            }
         }
 
         // results_in

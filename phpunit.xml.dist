@@ -7,7 +7,7 @@
 
     <testsuites>
         <testsuite name="Assessment Client Test Suite">
-            <directory>tests</directory>
+            <directory>tests/Unit</directory>
         </testsuite>
     </testsuites>
 
