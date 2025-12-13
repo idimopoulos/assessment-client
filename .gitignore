@@ -1,0 +1,43 @@
+# Composer
+/vendor/
+/composer.lock
+/composer.phar
+
+# PHP tooling caches
+.phpunit.result.cache
+.php-cs-fixer.cache
+.phpcs-cache
+.phpstan
+.phpstan.cache
+phpstan/cache/
+
+# Coverage / build artifacts
+coverage/
+build/
+dist/
+
+# IDE / Editor configs
+.idea/
+.vscode/
+.history/
+*.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs / temp
+*.log
+logs/
+tmp/
+.cache/
+*.cache
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Node (if any)
+node_modules/
