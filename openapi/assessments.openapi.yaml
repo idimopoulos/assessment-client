@@ -12,6 +12,8 @@ servers:
 security:
   - oauth2: [ ]
 paths:
+  /token:
+    $ref: "../../joinup_api/openapi/oauth2.openapi.yaml#/paths/~1token"
   /assessment:
     servers:
       - url: /api/assessments/v1
