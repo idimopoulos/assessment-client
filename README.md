@@ -7,16 +7,19 @@ A tiny, dependency‑free PHP model layer to construct Assessment payloads match
 - Composer.
 
 ## Installation
-Install dev tools and autoloader:
+Add the following to your `repositories` section of your project's `composer.json`:
+
+```json
+{
+    "type": "vcs",
+    "url": "https://github.com/idimopoulos/assessment-client.git"
+}
+```
+
+Then require the package:
 
 ```
-composer install
-```
-
-If you already installed once and only need the dev tools:
-
-```
-composer update --dev
+composer require idimopoulos/assessment-client
 ```
 
 ## Development tooling
@@ -49,15 +52,6 @@ composer qa
 Configuration files:
 - `phpcs.xml` — ruleset (PSR-12, excludes `vendor/` and `openapi/`).
 - `phpstan.neon.dist` — analysis settings (paths: `src/`).
-
-## IDE configuration
-PhpStorm and other JetBrains IDEs will pick up the project-wide `.editorconfig` located at the repository root.
-
-- Indentation: 4 spaces.
-- Line endings: LF with final newline.
-- Braces: classes, methods, and functions place opening braces on the next line (control structures keep PSR-12 defaults).
-
-If `.idea/` project files exist locally, they remain untracked (see `.gitignore`).
 
 ## Testing
 Basic PHPUnit tests are configured.
@@ -149,9 +143,3 @@ echo json_encode($payload, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES), PHP_EOL;
 ```
 
 If you want to validate this payload against the OpenAPI schema, run the test suite (see below) or reuse the validator logic from `tests/Support/SchemaValidatorTrait.php` in your own scripts.
-
-## License
-See the `LICENSE` file for license information.
-
-## Contact
-GitHub: `idimopoulos`
